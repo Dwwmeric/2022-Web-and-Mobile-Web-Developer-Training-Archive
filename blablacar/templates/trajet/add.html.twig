@@ -17,7 +17,7 @@
 
 				{{form_row(form.idVilleRetour)}}
 
-				
+
 				<div class="range-wrap">
 				{{form_row(form.prixTrajet)}}
 				<output class="bubble"></output>
@@ -28,23 +28,23 @@
 				{{form_row(form.save)}}
 
 			{{form_end(form)}}
-			
+
 				<div class="col padi" id="carte">
 			</div>
 			<div><a href="{{ path('recherche') }}" class="btn btn-secondary border-danger ">Retour</a><br><br></div>
-		</div>	
+		</div>
 	</div>
 
 	<script>
 		 $("#login-button").click(function(event){
 		 event.preventDefault();
-	 
+
 	$('form').fadeOut(500);
 	$('.wrapper').addClass('form-success');
 	});
 	</script>
 
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdcKah4k65g7cQ18H-xXMqz72AoMowDY8&v=weekly&libraries=places&callback=initMap" async></script>   
+	<script src="https://maps.googleapis.com/maps/api/*******" async></script>
 	<script type="text/javascript" src="{{ asset ('asset/Js/script.js') }}"></script>
 
 {% endblock %}
