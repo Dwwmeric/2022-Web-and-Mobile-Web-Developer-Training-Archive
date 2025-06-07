@@ -1,0 +1,17 @@
+  
+    {# {% for flashError in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+    {% endfor %} #}
+    
+    <div class="container">
+        <div class="form-control center">
+                    {{ form_start(UserForm) }}
+                        <h1>{{ controller_name | trans }}</h1>
+                            {{ form_row(UserForm.email) }}
+                                {{ form_row(UserForm.password) }}
+                                    {{ form_row(UserForm.roles) }}
+                       <button type="submit" class="buttonUser centerFlex">{{ "To validate"| trans}}</button>
+                    {{ form_end(UserForm) }}
+                </div>
+    </div>
+

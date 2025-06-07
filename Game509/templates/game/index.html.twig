@@ -1,0 +1,133 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TheGame509{% endblock %}
+
+{% block body %}
+
+    <div class="swiper mySwiperVertical swiper-v"> 
+        <div class="swiper-wrapper">
+
+
+            {# slide horizontal 1 et 2  #}
+                <div class="swiper-slide">
+                    <div class="swiper mySwiperHorizontal1 swiper-h">
+                        <div class="swiper-wrapper">
+                        
+                            <div class="swiper-slide"> {# vue slide1 #}
+                                <img src="asset/image/logoSlide1.png" alt="spatialship" class="logoSlide1">
+                                <h1 class="textSlide1">{{ "Number of players" | trans}}:</h1>
+
+                                        <div class="center">
+                                            <div class="number-input">
+                                                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+                                                    <input id="player" class="quantity" name="quantity" value="1" type="number">
+                                                <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                                            </div>
+                                        </div> 
+                                        
+                                        <div class="center">
+                                            <button onclick="numberPlayer()"  class="buttonNext nextH">{{"Next"| trans}}</button><br>
+                                            <button id="ruleModal" class="buttonRule">{{"Rule of the game"| trans}}</button>
+                                        </div>
+  
+                            </div>
+                            
+                          
+                            <div class="swiper-slide"> {# vue slide 2 #}
+
+                                <div class="container accordionSlide2">
+                                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                                        <div class="accordion-item ">
+                                            <h2 class="accordion-header colorBodyAcc" id="flush-headingOne">
+                                            <p class="colorBodyAcc "  data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                            {{"Change nicknames" | trans}} ↓	
+                                            </p>
+                                        </h2>
+                                        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body bodyAccordionStyle"><form id="accordionText" class="center"></div></form>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <h1 class="textSlide2">{{ "Turn" | trans}}:</h1>
+
+                                  <div class="center">
+                                            <div class="number-input">
+                                                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+                                                    <input id="numberTurn" min="1" class="quantity" name="quantity" value="3" type="number">
+                                                <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+                                            </div>
+                                        </div> 
+
+                                    <div class="center">
+                                            <button id="play" class="buttonNext nextV">{{"Play"| trans}}</button><br>
+                                            <button  class="buttonRule prevH">{{"Return"| trans}}</button>
+                                        </div>
+                                
+                                </div>
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            {# slide horizontal 3 et 4  #}        
+                <div class="swiper-slide">
+                    <div class="swiper mySwiperHorizontal2 swiper-h">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide" id="slide3">  {# vue 3#}
+                              
+                            </div>{# fin  slide3 #}
+                            
+                            <div class="swiper-slide" id="slide4"> {# vue 4#}
+
+                        
+                            
+                            </div>{# fin slide4 #}
+                        </div>
+                    </div>
+                </div>
+
+            {# slide horizontal 5  #} 
+                <div class="swiper-slide">
+                    <div class="swiper mySwiper swiper-h">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide" id="slide5">{# vue slide5 #}
+
+                            </div>{# fin slide5 #}
+                        </div>
+                    </div>
+                </div>
+          
+
+           
+           
+             </div>
+            </div>
+
+
+
+
+          </div>
+
+              {#  modal de gestion des form #}
+            <div class="modal" id="exampleModal3" tabindex="-1">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModal3Title"></h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body2" id="exampleModal3Content">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="buttonModal" data-bs-dismiss="modal">{{'Close'| trans}}</button>
+                </div>
+              </div>
+            </div>
+
+
+      
+
+{% endblock %}

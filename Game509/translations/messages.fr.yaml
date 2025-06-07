@@ -1,0 +1,83 @@
+New-password: nouveau mot de pass
+Repeat-password: Répéter le mot de passe
+Please enter a password: Veuillez entrer un mot de passe
+Starting point: Départ
+Super Administrator: Super Administrateur
+Client administrator: Administrateur client
+Modify a user: Modifier un utilisateur
+No product found for id: Aucun produit trouvé pour l'identifiant
+Adding a user: Ajout d'un utilisateur
+User: Utilisateur
+Close: Fermer
+Board Game: Plateau
+Logout: Se déconnecter
+The game of STUDIO509: Le jeu du STUDIO509
+List of Users: liste des utilisateurs
+Return: Retour
+Add: Ajouter
+To modify: Modifier
+Delete: Supprimer 
+List of default values: Liste des valeurs par défaut
+Name of the action: Nom de la régle
+Default value: Valeur par défaut
+Game board management: Gestion du plateau de jeu
+Order: Ordre 
+Name: Nom 
+You are connected: Vous etes connecté
+Home: Accueil
+Connection: Connexion
+Remember me: Se souvenir de moi
+ResetPassword: Mot de passe oublié 
+To validate: Valider
+Incorrect username or password: Identifiant ou mot de passe incorrect
+Reset your password: Réinitialisez votre mot de passe
+Enter your email address and we will send you a link to reset your password: Entrez votre adresse e-mail et nous vous enverrons un lien pour réinitialiser votre mot de passe
+Send password reset email: Envoyer un e-mail de réinitialisation de mot de passe
+If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password: Si un compte correspondant à votre e-mail existe, un e-mail vient d'être envoyé contenant un lien que vous pouvez utiliser pour réinitialiser votre mot de passe
+This link will expire in: Ce lien expirera dans
+If you don't receive an email please check your spam folder or: Si vous ne recevez pas d'e-mail, veuillez vérifier votre dossier spam ou
+try again: réessayer
+Hello: Bonjour
+To reset your password, please visit the following link: Pour réinitialiser votre mot de passe, veuillez visiter le lien suivant
+Cheers: Cordialement
+Your password should be at least {{ limit }} characters: Votre mot de passe doit comporter au moins {{ limit }} caractères
+The password fields must match.: Les champs de mot de passe doivent correspondre.
+Please enter your email: Please enter your email
+Adding a box: Ajout d'une case
+Color of the top of the box: Couleur du haut de la case
+Text color at the top of the box: Couleur du texte en haut de la case
+Activate the top of the box: Activer le haut de la case
+Box body text color: Couleur du text du corps de la case
+Box body color: Couleur du corps de la case
+Picture of the box: Image de la case 
+Box text: Texte de la case
+Bottom color of the box: Couleur du bas de la case
+Text color at the bottom of the box: Couleur du texte au bas de la case
+Value: Valeur
+Activate the bottom of the box: Activer le Bas de la case
+Regulations: Règlements
+Add default: Ajouter par défaut
+Changed default values: Modifier une valeur par défaut
+Modified the values of the boxes: Modification des valeurs des cases
+No user with: Aucun utilisateur avec
+Squares management: Gestion des cases
+Next: Suivant
+Rule of the game: Règle du jeu
+Change nicknames: Modifier les surnoms
+Set the number of turns: Régler le nombre de tours
+Random order of squares: Ordre aléatoire des cases
+Play: Jouer
+Let's Roll!: lancer ! 
+Result in: Résultat dans
+Restart: Recommencer
+Number of players: Nombre de joueurs
+Player: Joueur
+Turn: Tours
+New squares: Nouvelle case 
+New Pc: Nouveau Pc  
+Action square: Action de la case 
+Next player: Joueur suivant
+Final result: Résultat final
+Final score: Score final
+Neutral: Neutre
+Moves: Déplacement

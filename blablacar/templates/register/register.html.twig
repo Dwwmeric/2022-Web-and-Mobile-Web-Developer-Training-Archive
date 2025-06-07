@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CMFPCAR.com{% endblock %}
+
+{% block body %}
+
+        <style>
+            .wrapper { margin: 1em auto; max-width: 600px; width: 95%; font: 11px/1.1 cursive; }
+            .wrapper code { background: #F5F5F5; padding: 2px 6px; }
+        </style>
+
+    {% for flashError in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+    {% endfor %}
+
+   
+	<div class="form-control center wrapper">
+      
+        {{ form_start(registrationForm) }}
+                
+            <h1 class="font title"><i class="far fa-address-card"></i> Inscription</h1>
+
+                {{ form_row(registrationForm.prenom, {label: 'Prénom', attr:{placeholder: 'Prénom'}, row_attr: { class: 'form-floating padi'} }) }}
+                {{ form_row(registrationForm.nom, {label: 'Nom', attr:{placeholder: 'Nom'}, row_attr: { class: 'form-floating padi'} }) }}
+                {{ form_row(registrationForm.username, {label: 'Pseudonyme', attr:{placeholder: 'Pseudonyme'}, row_attr: { class: 'form-floating padi'} }) }}
+                {{ form_row(registrationForm.email, {label: '@email', attr:{placeholder: '@'}, row_attr: { class: 'form-floating padi'} }) }}
+                {{ form_row(registrationForm.telephone, {label: 'Téléphone', attr:{placeholder: 'Téléphone'}, row_attr: { class: 'form-floating padi'} }) }}
+                {{ form_row(registrationForm.profileImage, {label: 'Avatar', attr:{placeholder: 'Avatar'}, row_attr: { class: 'form-floating padi'} }) }}
+				
+				{{ form_row(registrationForm.plainPassword.first, {'label': 'Mot de passe', attr:{placeholder: 'Password'}, row_attr: { class: 'form-floating padi'} }) }}
+				{{ form_row(registrationForm.plainPassword.second, {'label': 'Répétez votre mot de passe', attr:{placeholder: 'Password'}, row_attr: { class: 'form-floating padi'} }) }}
+         
+            <button type="submit" class="btn btn-success padi">Valider</button> <a href="{{ path('app_login') }}" class="btn btn-primary padi">Retour</a>
+            
+        {{ form_end(registrationForm) }}
+	</div>
+{% endblock %}

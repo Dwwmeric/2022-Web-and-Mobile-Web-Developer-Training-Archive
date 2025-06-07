@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CMFPCAR.com{% endblock %}
+
+{% block body %}
+
+    
+
+        {% if error %}
+            <div class="alert alert-danger">{{ 'security' }}</div>
+        {% endif %} 
+
+        <div class="card form" style="width: 500px;">
+           <h1 class="center title font animate__animated animate__backInLeft">CMFPCAR</h1>
+            <img src="{{ asset ('asset/Images/map.png') }}" class="card-img-top format" alt="voiture">
+                <div class="card-body">
+                    <h3 class="card-title font1 center">Connexion</h3>
+                           {% if app.user %}
+                            <div class="center">
+                                Vous êtes connecté {{ app.user.username }}, <a href="{{ path('recherche') }}" class="btn btn-link">Profile</a> <a href="{{ path('logout') }}" class="btn btn-link">Déconnexion</a>
+                            </div>
+                            {% endif %}
+                        <form method="post">
+                            <label for="inputEmail">Email: </label>
+                                <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus><br>
+                                    <label for="inputPassword">Password: </label>
+                                <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required><br>
+                                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                                    {#
+                                        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+                                        See https://symfony.com/doc/current/security/remember_me.html
+
+                                            <div class="checkbox mb-3">
+                                                <label>
+                                                    <input type="checkbox" name="_remember_me"> Remember me
+                                                </label>
+                                            </div>
+                                    #}
+                                    {% for flash_message in app.session.flashbag.get('error') %}
+                                             <div class="alert alert-danger center">{{ 'Identifiant ou mot de passe incorrect' }}</div>
+                                    {% endfor %}
+
+                                    <label><input type="checkbox" name="_remember_me"> Se souvenir de moi </label><br>
+                                <div class="container">
+                                    <div class="row g-2">
+                                <div class="col-6 center"><button class="btn btn btn-success pad center" type="submit">Valider</button></div><div class="col-6 center"><a href="{{path('app_register')}}" class="btn btn btn-warning pad"> S'inscrire</a></div>
+                                </div>
+                                </div>
+                    <h3 class="pad font2 center">Connexion avec:</h3>
+                        <div class="container">
+                             <div class="row g-2">
+                                 <div class="col-6"><a href="{{path('connect_facebook_start')}}" class="btn  btn-primary pad ">Connexion avec Facebook</a></div>
+                                <div class="col-6"><a href="{{path('connect_google_start')}}" class="btn  btn-danger pad">Connexion avec Google</a></div>
+                        </form>
+                      
+                        </div>
+                        </div>
+                </div>
+        </div>
+       
+                   
+       
+    {% for flash_message in app.session.flashbag.get('error') %}
+        <div class="alert alert-danger center">{{ 'Identifiant ou mot de passe incorrect' }}</div>
+    {% endfor %}
+
+{% endblock %}

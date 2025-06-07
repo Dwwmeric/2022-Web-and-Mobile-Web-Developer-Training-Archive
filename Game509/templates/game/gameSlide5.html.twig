@@ -1,0 +1,59 @@
+<div class="container" >
+    <h2 class="finalTitle">{{"Final score"| trans}}</h2>
+    <h2 class="pos1">🥇{{ pos1.name }}</h2>
+    {% if pos2 != NULL %}
+    <h2 class="pos2">🥈{{pos2.name}}</h2>
+    {% endif %}
+    <h2 class="pos2"></h2>
+
+    {% if pos3 != NULL %}
+    <h2 class="pos3">🥉{{ pos3.name }}</h2>
+    {% endif %}
+    <h2 class="pos3"></h2>
+    <img src="asset/image/podium.png" alt="podium" class="podium" >
+
+    <table class="table  TableResult" id="capture">
+        <thead>
+            <tr class ="bgTableResult">
+                <th class="center">🏆</th>
+                <th class="center">{{"Name" | trans }}</th>
+                <th class="center">Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in player %}
+                <tr>
+                    <th class="center textColorResult">{{ loop.index }}</th>
+                    <td class="center textColorResult">{{ user.name }}</td>
+                    <td class="center textColorResult">{{ user.score }}</td>
+                </tr>
+            {% endfor %} 
+        </tbody>
+    </table>
+
+    <button  class="buttonRestart" id="rePlay">{{"Restart"| trans}}</button>
+
+
+        <!-- Load Facebook SDK for JavaScript -->
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+        <!-- Your share button code -->
+        <div onclick="takeshot()" class="fb-share-button" 
+            data-href="https://boardgame.studio509.dev/game" 
+            data-layout="button" 	
+            data-size="large">
+        </div> 
+
+    <button onclick="takeshot()" >feca</div>
+     <div id="output"></div>
+         
+<div>

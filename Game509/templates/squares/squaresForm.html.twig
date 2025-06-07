@@ -1,0 +1,29 @@
+  
+    {# {% for flashError in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+    {% endfor %} #}
+    
+    <div class="container">
+        <div class="form-control center">
+                    {{ form_start(SquaresForm) }}
+                        <h1>{{ controller_name | trans }}</h1>
+                            {{ form_row(SquaresForm.name) }}
+                                {{ form_row(SquaresForm.order) }}
+                                    {{ form_row(SquaresForm.type) }}
+                                        {{ form_row(SquaresForm.description) }}
+                                            {{ form_row(SquaresForm.headerColorText) }}
+                                                {{ form_row(SquaresForm.headerColorBg) }}
+                                                    {{ form_row(SquaresForm.headerDisplay) }}
+                                                        {{ form_row(SquaresForm.bodyColorText) }}
+                                                    {{ form_row(SquaresForm.bodyColorBg) }}
+                                            {{ form_row(SquaresForm.bodyImg) }}
+                                        {{ form_row(SquaresForm.bodyText) }}
+                                    {{ form_row(SquaresForm.footerColorText) }}
+                                {{ form_row(SquaresForm.footerColorBg) }}
+                            {{ form_row(SquaresForm.footerValue) }}
+                        {{ form_row(SquaresForm.footerDisplay) }}
+                       <button type="submit" class="buttonUser centerFlex">{{ "To validate"| trans}}</button>
+                    {{ form_end(SquaresForm) }}
+                </div>
+    </div>
+

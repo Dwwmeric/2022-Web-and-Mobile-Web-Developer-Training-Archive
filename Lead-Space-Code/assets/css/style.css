@@ -1,0 +1,1199 @@
+
+/* Style de la page "LOGIN"  */
+.bg_login {
+    background-image: url(../image/spaceArt.jpg);
+    background-size: auto;
+    margin: 0;
+    padding: 0;
+}
+
+#SectionLogin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#FormLogin {
+    background: linear-gradient(217deg, rgba(102, 16, 242, 1), rgba(255, 0, 0, 0) 70.71%),
+        linear-gradient(127deg, rgb(0, 42, 255), rgba(0, 255, 0, 0) 70.71%),
+        linear-gradient(336deg, rgb(195, 0, 255), rgba(0, 0, 255, 0) 70.71%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: 1px solid white;
+    border-radius: 10px;
+    margin-top: 8%;
+    padding: 2%;
+}
+
+.textLogin {
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    font-size: 2em;
+    font-family: 'Bungee Inline', cursive;
+}
+
+#loginButton {
+    height: 50px;
+    width: 400px;
+    font-size: 2em;
+    font-family: 'Bungee Inline', cursive;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 20px;
+}
+
+#linkSignup {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-family: 'Bungee Inline', cursive;
+}
+
+#linkSignup :hover {
+    color: black;
+}
+
+#linkpassword {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-family: 'Bungee Inline', cursive;
+}
+
+#linkpassword :hover {
+    color: black;
+}
+
+#linkHome {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-family: 'Bungee Inline', cursive;
+}
+
+#linkHome :hover {
+    color: black;
+}
+
+.starShip {
+    position: absolute;
+    top: 8%;
+    right: 28%;
+    transform: rotate(-20deg);
+    width: 400px;
+    height: 250px;
+    z-index: 2;
+}
+
+.errorLogin {
+    position: relative;
+    background-color: rgba(255, 0, 0, 0.44);
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    margin: 0px;
+    font-style: italic;
+    font-size: 1em;
+    width: 300px;
+    text-align: center;
+}
+
+#titleLogin {
+    position: absolute;
+    top: 10%;
+    color: white;
+    font-family: 'Bungee Inline', cursive;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+#loginlinks {
+    text-align: center;
+}
+
+
+/* Style de la page "SIGNUP"  */
+#SectionSignup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6%;
+    margin-bottom: 1%;
+}
+
+#FormSignup {
+    background: linear-gradient(217deg, rgba(102, 16, 242, 1), rgba(255, 0, 0, 0) 70.71%),
+        linear-gradient(127deg, rgb(0, 42, 255), rgba(0, 255, 0, 0) 70.71%),
+        linear-gradient(336deg, rgb(195, 0, 255), rgba(0, 0, 255, 0) 70.71%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 20px
+}
+
+.textSignup {
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    font-family: 'Bungee Inline', cursive;
+}
+
+.robotSignup {
+    position: absolute;
+    top: 2%;
+    right: 55%;
+    width: 400px;
+    height: 250px;
+    z-index: 2;
+}
+
+#titleSignup {
+    position: absolute;
+    top: 10%;
+    color: white;
+    font-family: 'Bungee Inline', cursive;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+.errorSignup {
+    position: absolute;
+    top: 18%;
+    right: 33%;
+    background-color: rgba(255, 0, 0, 0.44);
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    margin: 0px;
+    font-style: italic;
+    font-size: 1em;
+    width: 300px;
+    text-align: center;
+}
+
+.signupButton {
+    font-size: 2em;
+    font-family: 'Bungee Inline', cursive;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#linkLogin {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-family: 'Bungee Inline', cursive;
+    position: relative;
+    top: 25px;
+}
+
+#linkLogin :hover {
+    color: black;
+}
+
+/* style "user-reset */
+
+#SectionReset {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+#FormReset {
+    width: 30%;
+    height: 30%;
+    background: linear-gradient(217deg, rgba(102, 16, 242, 1), rgba(255, 0, 0, 0) 70.71%),
+        linear-gradient(127deg, rgb(0, 42, 255), rgba(0, 255, 0, 0) 70.71%),
+        linear-gradient(336deg, rgb(195, 0, 255), rgba(0, 0, 255, 0) 70.71%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 30px
+}
+
+#titleReset {
+    position: absolute;
+    top: 25%;
+    color: white;
+    font-family: 'Bungee Inline', cursive;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+.clic {
+    position: absolute;
+    top: 27%;
+    left: 33%;
+    width: 130px;
+    height: 130px;
+}
+
+#ResetButton {
+    height: 50px;
+    width: 500px;
+    margin-left: 10%;
+    margin-top: 5px;
+    font-size: 1.5em;
+    font-family: 'Bungee Inline', cursive;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#linkReset {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-family: 'Bungee Inline', cursive;
+    position: relative;
+    top: 50px;
+}
+
+#linkReset :hover {
+    color: black;
+}
+
+.errorReset {
+    position: absolute;
+    top: 35%;
+    left: 35.5%;
+    background-color: rgba(255, 0, 0, 0.44);
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    margin: 0px;
+    font-style: italic;
+    font-size: 1em;
+    width: 300px;
+    text-align: center;
+}
+
+/* style "includes/navBar.php" */
+
+.bgNavBar {
+    background: linear-gradient(217deg, rgba(102, 16, 242, 1), rgba(255, 0, 0, 0) 70.71%),
+        linear-gradient(127deg, rgb(0, 42, 255), rgba(0, 255, 0, 0) 70.71%),
+        linear-gradient(336deg, rgb(195, 0, 255), rgba(0, 0, 255, 0) 70.71%);
+}
+
+.navTitle {
+    color: white;
+    font-family: 'Bungee Inline', cursive;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+.outils {
+    background: rgb(0, 42, 255);
+    color: white;
+}
+
+.textOutils {
+    font-family: 'Bungee Inline', cursive;
+    font-size: 0.8em;
+}
+
+.colorOutils {
+    color: white;
+}
+
+.outils :hover {
+    background: rgb(0, 42, 255);
+    color: white;
+}
+
+/* style "profil.php" */
+.bgProfil {
+    background-image: url(../image/spaceArt.jpg);
+    background-size: auto;
+    width: 100%;
+    height: 100%;
+}
+
+.titlteEdit {
+    color: white;
+    font-family: 'Bungee Inline', cursive;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    margin-top: 50px;
+}
+
+.titlteCard {
+    color: rgb(9, 255, 0);
+    font-family: 'Bungee Inline', cursive;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+.bgCardProfil {
+    background-color: black;
+    border-radius: 5px;
+}
+
+.profil {
+    margin-top: 100px;
+    background-color: rgba(240, 248, 255, 0);
+    border: 0px;
+}
+
+.updatePwd {
+    margin: 20px;
+}
+
+.deleteUser {
+    margin: 20px;
+}
+
+.successProf {
+    background-color: rgba(0, 255, 4, 0.44);
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    font-style: italic;
+    font-size: 1.5em;
+    width: 600px;
+    text-align: center;
+}
+
+.errorProf {
+    background-color: rgba(255, 0, 0, 0.44);
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    font-style: italic;
+    font-size: 1.5em;
+    width: 600px;
+    text-align: center;
+}
+
+/* style index.php */
+/* game home style  */
+#gameHome {
+    margin-top: 50px;
+}
+
+#jsGame {
+    margin-left: 25%;
+}
+
+#endScreen {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    overflow: hidden;
+    text-transform: uppercase;
+    cursor: pointer;
+    z-index: 3;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.1s;
+}
+
+#endScreen .gameOver {
+    margin: 15rem 0;
+    text-align: center;
+    width: 60%;
+    line-height: 9rem;
+    color: #3c00ff;
+    background: rgba(255, 166, 0, 0.651);
+    box-shadow: 0 10px 15px black;
+    font-size: 4rem;
+    padding: 1rem;
+    text-shadow: 4px 2px 1px rgba(211, 4, 4, 0.808);
+}
+
+#endScreen .youWin {
+    margin: 15rem 0;
+    width: 60%;
+    color: #3c00ff;
+    background: rgba(255, 166, 0, 0.651);
+    box-shadow: 0 10px 15px black;
+    font-size: 3rem;
+    padding: 1rem;
+    text-shadow: 4px 2px 1px rgba(211, 4, 4, 0.808);
+}
+
+#endScreen .youWin span {
+    color: #e90000;
+    font-weight: bold;
+    text-shadow: 3px 1px 1px rgba(0, 0, 0, 0.808);
+}
+
+#start {
+    margin-left: 5px;
+    padding: 10px 1rem;
+    background: rgb(195, 0, 255);
+    border-radius: 5px;
+    color: black;
+    border: 1px rgba(128, 128, 128, 0.404) solid;
+    box-shadow: 1px 1px 1px #333;
+    transition: 0.3s ease;
+    cursor: pointer;
+    font-family: 'Bungee Inline', cursive;
+    outline: none;
+    animation: shadow-pop-br 0.2s cubic-bezier(0.47, 0, 0.745, 0.715) both;
+}
+
+#start:active {
+    animation: shadow-back 0.1s cubic-bezier(0.47, 0, 0.745, 0.715) both;
+}
+
+@keyframes shadow-pop-br {
+    0% {
+        box-shadow: 0 0 rgb(0, 0, 0), 0 0 black, 0 0 black, 0 0, 0 0 black, 0 0 black, 0 0 black, 0 0 black;
+        transform: translateX(0) translateY(0);
+    }
+
+    100% {
+        box-shadow: 1px 1px black, 2px 2px black, 3px 3px black, 4px 4px black, 5px 5px black, 6px 6px black, 7px 7px black, 8px 8px black;
+        transform: translateX(-8px) translateY(-8px);
+    }
+}
+
+@keyframes shadow-back {
+    0% {
+        box-shadow: 1px 1px black, 2px 2px black, 3px 3px black, 4px 4px black, 5px 5px black, 6px 6px black, 7px 7px black, 8px 8px black;
+        transform: translateX(-8px) translateY(-8px);
+    }
+
+    100% {
+        box-shadow: 0 0 black, 0 0 black, 0 0 black, 0 0 black, 0 0 black, 0 0 black, 0 0 black, 0 0 black;
+        transform: translateX(0) translateY(0);
+    }
+}
+
+#start:hover {
+    box-shadow: 1px 1px 1px #333, inset 0 0 0 40px #ffffffc5;
+    color: black;
+    background: rgba(102, 16, 242, 1);
+}
+
+.scoreboard {
+    color: white;
+    font-family: 'Bungee Inline', cursive;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    padding-bottom: 1rem;
+}
+
+.scoreboard .kills {
+    font-size: 1rem;
+}
+
+.scoreboard .kills #score {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #ff0000e1;
+}
+
+.scoreboard .confinement {
+    font-size: 1rem;
+}
+
+.scoreboard .confinement #days {
+    color: #ff0000e1;
+    font-size: 1.6rem;
+}
+
+#canvas {
+    cursor: crosshair;
+    border: none;
+    background: linear-gradient(217deg, rgba(102, 16, 242, 1), rgba(255, 0, 0, 0) 70.71%),
+        linear-gradient(127deg, rgb(0, 42, 255), rgba(0, 255, 0, 0) 70.71%),
+        linear-gradient(336deg, rgb(195, 0, 255), rgba(0, 0, 255, 0) 70.71%);
+    box-shadow: 0 10px 15px black;
+    position: relative;
+    overflow: hidden;
+    height: 500px;
+    width: 500px;
+}
+
+#canvas .virus {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    height: var(--y);
+    width: var(--x);
+    --scaler: 1;
+    animation: virusAnim 14s forwards;
+}
+
+#canvas .virus:hover {
+    --scaler: 1.2;
+}
+
+#canvas .virus:active {
+    --scaler: 0.8;
+}
+
+@keyframes virusAnim {
+    from {
+        transform: translate(0%, 0%) scale(var(--scaler));
+    }
+
+    to {
+        transform: translate(var(--trX), var(--trY)) scale(var(--scaler));
+    }
+}
+
+/*  text resume de "index.php" */
+
+#resume {
+    width: 500px;
+    height: 500px;
+    background-color: black;
+    box-shadow: 0 10px 15px white;
+}
+
+#resume h2 {
+    color: white;
+    font-family: 'Bungee Inline', cursive;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    text-align: center;
+    font-size: 1.5em;
+    padding: 20px;
+}
+
+#resume p {
+    color: white;
+    font-family: 'Bungee Inline', cursive;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    text-align: center;
+    font-size: 1em;
+    padding: 50px;
+}
+
+/* div qstIndex */
+/* #qstIndex {
+   
+} */
+
+/* div artIndex   */
+/* #artIndex {
+    
+} */
+
+/* commun à article et question  */
+
+.titleIndex {
+    color: white;
+    font-family: 'Bungee Inline', cursive;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    text-align: center;
+    font-size: 2em;
+}
+
+
+/* style "change-psw.php" commun avec "endMailResetPsw.php*/
+.bg_psw {
+    background-image: url(../image/spaceArt.jpg);
+    background-size: auto;
+    width: 100%;
+    height: 100%;
+}
+
+#SectionResetPsw {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+#FormResetPsw {
+    width: 40%;
+    height: 40%;
+    background: linear-gradient(217deg, rgba(102, 16, 242, 1), rgba(255, 0, 0, 0) 70.71%),
+        linear-gradient(127deg, rgb(0, 42, 255), rgba(0, 255, 0, 0) 70.71%),
+        linear-gradient(336deg, rgb(195, 0, 255), rgba(0, 0, 255, 0) 70.71%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 50px
+}
+
+.textResetPsw {
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    font-family: 'Bungee Inline', cursive;
+}
+
+.mailRstPsw {
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    font-size: 2em;
+    display: flex;
+    justify-content: start;
+    font-family: 'Bungee Inline', cursive;
+}
+
+#resetPswButton {
+    height: 50px;
+    width: 400px;
+    margin-left: 28%;
+    font-size: 2em;
+    font-family: 'Bungee Inline', cursive;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.errorRst {
+    position: absolute;
+    top: 30%;
+    background-color: rgba(255, 0, 0, 0.44);
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    margin: 0px;
+    font-style: italic;
+    font-size: 1em;
+    width: 300px;
+    text-align: center;
+}
+
+#titleResetPsw {
+    position: absolute;
+    top: 20%;
+    color: white;
+    font-family: 'Bungee Inline', cursive;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+#nullPswButton {
+    text-decoration: none;
+    font-size: 1.5em;
+    font-family: 'Bungee Inline', cursive;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* style "endMailResetPsw.php" */
+
+#linkendRst {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-family: 'Bungee Inline', cursive;
+}
+
+.textendRst {
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    font-family: 'Bungee Inline', cursive;
+}
+
+/* style "edit-question.php" */
+
+.bgEdtQst {
+    background-image: url(../image/spaceArt.jpg);
+    background-size: auto;
+    width: 100%;
+    height: 100%;
+}
+
+#SectionQts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+#FormQts {
+    width: 50%;
+    height: 50%;
+    background: linear-gradient(217deg, rgba(102, 16, 242, 1), rgba(255, 0, 0, 0) 70.71%),
+        linear-gradient(127deg, rgb(0, 42, 255), rgba(0, 255, 0, 0) 70.71%),
+        linear-gradient(336deg, rgb(195, 0, 255), rgba(0, 0, 255, 0) 70.71%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 50px
+}
+
+#titleQts {
+    position: absolute;
+    top: 20%;
+    color: white;
+    font-family: 'Bungee Inline', cursive;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+.textQts {
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    font-family: 'Bungee Inline', cursive;
+}
+
+#qstButton {
+    font-size: 1.5em;
+    font-family: 'Bungee Inline', cursive;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#errorQst {
+    position: absolute;
+    top: 29%;
+    background-color: rgba(255, 0, 0, 0.44);
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    margin: 0px;
+    font-style: italic;
+    font-size: 1em;
+    width: 300px;
+    text-align: center;
+}
+
+#sucessQst {
+    position: absolute;
+    top: 29%;
+    background-color: rgba(0, 255, 4, 0.44);
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    margin: 0px;
+    font-style: italic;
+    font-size: 1em;
+    width: 300px;
+    text-align: center;
+}
+
+/* style "edit-article.php" */
+.bgEdtArt {
+    background-image: url(../image/spaceArt.jpg);
+    background-size: auto;
+    width: 100%;
+    height: 100%;
+}
+
+#SectionArt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+#FormArt {
+    width: 50%;
+    height: 50%;
+    background: linear-gradient(217deg, rgba(102, 16, 242, 1), rgba(255, 0, 0, 0) 70.71%),
+        linear-gradient(127deg, rgb(0, 42, 255), rgba(0, 255, 0, 0) 70.71%),
+        linear-gradient(336deg, rgb(195, 0, 255), rgba(0, 0, 255, 0) 70.71%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 50px
+}
+
+#titleArt {
+    position: absolute;
+    top: 20%;
+    color: white;
+    font-family: 'Bungee Inline', cursive;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+.textArt {
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    font-family: 'Bungee Inline', cursive;
+}
+
+#artButton {
+    font-size: 1.5em;
+    font-family: 'Bungee Inline', cursive;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#errorArt {
+    position: absolute;
+    top: 29%;
+    background-color: rgba(255, 0, 0, 0.44);
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    margin: 0px;
+    font-style: italic;
+    font-size: 1em;
+    width: 300px;
+    text-align: center;
+}
+
+#sucessArt {
+    position: absolute;
+    top: 29%;
+    background-color: rgba(0, 255, 4, 0.44);
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    margin: 0px;
+    font-style: italic;
+    font-size: 1em;
+    width: 300px;
+    text-align: center;
+}
+
+/* include "footer.php */
+
+
+footer {
+    background: linear-gradient(306deg, rgba(102, 16, 242, 1) 0%, rgba(0, 42, 255, 1) 100%);
+    position: fixed;
+    bottom: 0px;
+}
+
+footer #logo {
+    color: white;
+    text-align: center;
+    font-size: 1em;
+    padding-top: 8px;
+    margin-bottom: 0;
+    font-family: 'Bungee Inline', cursive;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer #links {
+    color: white;
+    text-align: center;
+}
+
+footer a:hover {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+/* style info.php*/
+.accueilInfo {
+    margin-left: 10%;
+    padding: 10%;
+}
+
+#headerInfo {
+    color: white;
+    text-align: center;
+    font-family: 'Bungee Inline';
+    margin-bottom: 40px;
+}
+
+.infoText {
+    text-align: center;
+    background: linear-gradient(217deg, rgba(102, 16, 242, 1), rgba(255, 0, 0, 0) 70.71%),
+        linear-gradient(127deg, rgb(0, 42, 255), rgba(0, 255, 0, 0) 70.71%),
+        linear-gradient(336deg, rgb(195, 0, 255), rgba(0, 0, 255, 0) 70.71%);
+    width: 95%;
+    height: 100%;
+    padding: 10%;
+    border: 2px solid white;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.5em;
+}
+
+#titleInfoPhp{
+    font-family: 'Bungee Inline';
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    margin-bottom: 3%;
+}
+
+#block-annimeInfo{
+    margin: 2% 0%;
+    position:fixed;
+}
+
+.annimeInfo {
+    position: relative;
+    animation-name: astro;
+    animation-duration: 25S;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    width: 150px;
+    z-index: 2;
+}
+
+@keyframes astro {
+    to {transform: rotate(180deg)}
+    0%   {left:-5%; top:0px;}
+    100% { left:100%; top:0px;}
+}
+
+.annimeInfo2 {
+    position: relative;
+    animation-name: jupiter;
+    animation-duration: 40S;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    width: 200px;
+    z-index: 1;
+}
+
+@keyframes jupiter {
+    to {transform: rotate(360deg)}
+    0%   {left:-20%; top:0px;}
+    100% { left:100%; top:0px;}
+}
+
+.annimeInfo3 {
+    position: relative;
+    animation-name: alien;
+    animation-duration: 15S;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    width: 200px;
+    z-index: 1;
+}
+
+@keyframes alien {
+    to {transform: rotate(-30deg)}
+    0% { left:100%; top:0px;}
+    100%   {left:-20%; top:0px;}
+}
+
+
+/* ####################################################### */
+/* Media Queries */
+/* ####################################################### */
+
+/* pour écran 1920 */
+@media screen and (max-width: 1920px) {
+
+    /* style "login.php " */
+    .starShip {
+        right: 18%;
+    }
+
+    /* style signup.php */
+    .robotSignup {
+        width: 300px;
+        height: 186px;
+        right: 58%;
+    }
+
+    .errorSignup {
+        top: 18%;
+        right: 17%;
+    }
+
+    /* style info.php */
+    .accueilInfo{
+        padding: 0;
+    }
+
+    .infoText {
+        padding: 4%;
+        border-radius: 30%;
+    }
+
+    /* style info.php */
+    #jsGame {
+        margin-left: 10%;
+    }
+
+}
+
+/* pour écran 1440 */
+@media screen and (max-width: 1440px) {
+
+    /* style "login.php " */
+    .starShip {
+        right: 15%;
+        transform: rotate(347deg);
+    }
+
+    /* style footer.php */
+    footer {
+        position: fixed;
+        bottom: 0;
+    }
+
+    /* style signup.php */
+    #titleSignup {
+        top: 5%;
+    }
+
+    .errorSignup {
+        top: 15%;
+        right: 15%;
+    }
+
+}
+
+
+/* pour écran 1024px */
+@media screen and (max-width: 1024px) {
+
+    /* style "login.php" */
+    #titleLogin {
+        top: 5%;
+    }
+
+    .starShip {
+        width: 250px;
+        height: 155px;
+    }
+
+    /* style signup.php */
+    .robotSignup {
+        width: 245px;
+        height: 139px;
+        right: 61%;
+    }
+
+    .errorSignup {
+        top: 13%;
+        right: 9%;
+    }
+
+}
+
+/* pour écran 768px */
+@media screen and (max-width: 768px) {
+
+    /* style "index.php" */
+    #resume {
+        display: none;
+    }
+
+    #qstIndex {
+        margin-top: 50px;
+    }
+
+    #jsGame {
+        margin-left: 104px;
+    }
+
+    .scoreboard {
+        margin-left: 20%;
+    }
+
+    /* style login.php */
+    .starShip {
+        transform: rotate(353deg);
+        width: 187px;
+        height: 126px;
+    }
+
+    /* style signup.php */
+    .errorSignup {
+        top: 9%;
+        right: 31%;
+    }
+
+
+}
+
+/* pour écran 425px */
+@media screen and (max-width: 425px) {
+
+    /* style "index.php" */
+    #jsGame {
+        display: none;
+    }
+
+    .searchIndex {
+        margin: 0;
+    }
+
+    /* style login.php */
+    .starShip {
+        display: none;
+    }
+
+    #formLogin {
+        padding: 1%;
+        margin-top: 10%;
+    }
+
+    #loginButton {
+        margin: 0;
+    }
+
+    /* style login.php */
+    .robotSignup {
+        display: none;
+    }
+
+    #titleSignup {
+        top: 1%;
+    }
+
+    #SectionSignup {
+        margin-top: 3%;
+    }
+
+    .signupButton {
+        font-size: 1em;
+    }
+
+    .errorSignup {
+        top: 6%;
+        right: 14%;
+    }
+}
+
+/* pour écran 375px */
+@media screen and (max-width: 375px) {
+
+    /* style "login.php" */
+    #titleLogin {
+        top: 2%;
+    }
+
+    #loginButton {
+        width: 345px;
+    }
+
+    /* style login.php */
+    .signupButton {
+        width: 120px;
+    }
+
+    #linkLogin {
+        font-size: 1em;
+    }
+
+    .errorSignup {
+        top: 5%;
+        right: 3%;
+    }
+
+
+}

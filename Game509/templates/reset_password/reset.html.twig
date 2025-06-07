@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TheGame509{% endblock %}
+
+{% block body %}
+    <div class="container">
+            <img src="{{ asset ('asset/image/gameReset2.png') }}" alt="logo" class="logo">
+                <h2 id="mainTitle">🎮 {% trans %}The game of STUDIO509{% endtrans %} 🎲</h2> 
+                    <div class="form-control center">
+                        <h1>{% trans %}Reset your password{% endtrans %} </h1>
+
+                                {{ form_start(resetForm) }}
+                                    {{ form_row(resetForm.plainPassword) }}
+                                    <button class="btn btn-primary">{% trans %}To validate{% endtrans %}</button>
+                                {{ form_end(resetForm) }}
+                     </div>
+    </div>
+{% endblock %}

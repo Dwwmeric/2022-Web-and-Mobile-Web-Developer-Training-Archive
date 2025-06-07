@@ -1,0 +1,25 @@
+{# vue slider4  #}
+
+<div class="container">  
+
+    <button  class="buttonScore score1Modal">Score</button> <h2 class="textPlayer">{{ player.name}}</h2>
+
+        <h2 class="textTurn2">{{"Turn" | trans}}: {{ player.turn}}</h2>
+            <h2 class="textNewSquare">{{"New squares" | trans}}: {{ square.name }}</h2>
+                <p class="actionSquare">{{"Action square" | trans}}: {{ square.footerValue}}</p>
+            <h2 class="textNewScore">{{"New Pc" | trans}}:{{ player.score }}</h2>
+
+            <p class="textdescription">{{ square.description}}</p>
+
+
+
+    {# Affichage du boutton pour le result final #}
+    {% if player.turn == play.turnMax %}
+        <button   class="buttonNextPlayer nextV" id="finishPlay" >{{"Final result" | trans}}</button>
+        <button  class="buttonNextPlayer" style="display:none" id="bouclePlayer">{{"Next player" | trans}}</button>
+    {% else %}
+        <button   class="buttonNextPlayer nextV" id="finishPlay" style="display:none" >{{"Final result" | trans}}</button>
+        <button  class="buttonNextPlayer" id="bouclePlayer">{{"Next player" | trans}}</button>
+    {% endif %}
+
+</div> 

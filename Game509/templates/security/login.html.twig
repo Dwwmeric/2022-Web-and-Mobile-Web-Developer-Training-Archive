@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TheGame509{% endblock %}
+
+{% block body %}
+
+   
+    <div class="container">
+        <img src="{{ asset ('asset/image/logoAccueil.png') }}" alt="logo" class="logo">
+            <h2 id="mainTitleLogin">🎮 {% trans %}The game of STUDIO509{% endtrans %} 🎲</h2> 
+                <div class="form-control center">
+                    <h1>{% trans %}Connection{% endtrans %}</h1>
+                            {% if app.user %}
+                                <div class="center">
+                                    {% trans %}You are connected{% endtrans %},<a href="{{ path('home_listing') }}" class="btn btn-link">{% trans %}Home{% endtrans %}</a> <a href="{{ path('logout') }}" class="btn btn-link">{% trans %}Logout{% endtrans %}</a>
+                                </div>
+                            {% endif %}
+                                <form method="post">
+                                    <label for="inputEmail">Email: </label>
+                                        <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus><br>
+                                            <label for="inputPassword">Password: </label>
+                                        <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required><br>
+                                            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                                                {% for flash_message in app.session.flashbag.get('error') %}
+                                                        <div class="alert alert-danger center">{% trans %} Incorrect username or password{% endtrans %}</div>
+                                                {% endfor %}
+                                            <label><input type="checkbox" name="_remember_me">{% trans %}Remember me{% endtrans %} </label><br>
+                                             <a href="{{ path('app_forgot_password_request') }}" class="btn btn btn-success">{% trans %}ResetPassword{% endtrans %}</a> 
+                                        <button class="btn btn btn-success" type="submit">{% trans %}To validate{% endtrans %}</button>
+                                </form>
+
+                   
+                </div>
+    </div>
+                   
+     
+{% endblock %}

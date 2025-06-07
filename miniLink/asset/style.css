@@ -1,0 +1,144 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	font-family: arial;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+footer a{
+	color: #ee6123;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+header {
+	padding: 30px;
+}
+
+header #logo {
+	color: #fff;
+	font-family: 'Bungee Inline', cursive;
+	font-size: 25px;
+}
+
+footer {
+	text-align: center;
+	padding: 30px;
+	font-size: 0.9em;
+}
+
+footer #logo {
+	height: 35px;
+	margin: 10px;
+}
+
+h2 {
+	color: white;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: 400;
+	font-size: 2.9em;
+	margin-bottom: 10px;
+}
+
+h3 {
+	color: white;
+	text-align: center;
+	font-weight: 500;
+}
+
+h3 {
+	margin: 0;
+	color: #ee6123;
+	text-transform: uppercase;
+	padding-bottom: 30px;
+}
+
+#contentUrl {
+	border-radius: 3px;
+	box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.4);
+	padding: 17px 30px;
+	border: none;
+	width: 50%;
+	font-size: 1.3em;
+}
+
+#urlValid  {
+	cursor: pointer;
+	padding: 17px 30px;
+	font-size: 1.3em;
+	border: none;
+	border-radius: 3px;
+	background: #ee6123;
+	color: white;
+	text-transform: uppercase;
+	font-weight: 700;
+	box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.4);
+}
+
+#urlLite{
+	background-image: url('img/matrix-356024.jpg');
+	background-size: cover;
+	height: 600px;
+}
+
+#urlLite form {
+	text-align: center;
+	margin-top: 30px;
+}
+
+#result {
+	color: white;
+	margin: 20px;
+	padding: 30px;
+	border: 1px solid white;
+	border-radius: 10px;
+	display: inline-block;
+}
+
+#brands {
+	background-color: #eff7fc;
+	padding: 30px;
+	text-align: center;
+}
+
+.center {
+	text-align: center;
+}
+
+.container {
+	width: 1100px;
+	margin: 0 auto;
+}
+
+.picture {
+	height: 35px;
+	margin: 15px;
+	color: green;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+/* pour écran 425px */
+@media screen and (max-width: 425px) {
+
+	#logo {
+		text-align: center;
+	}
+
+	h2{
+		font-size: 1.9em;
+	}
+	
+	h3 {
+		padding-bottom: 0;
+	}
+
+	#contentUrl {
+		width:80%;
+		margin-bottom: 10px;
+	}
+}

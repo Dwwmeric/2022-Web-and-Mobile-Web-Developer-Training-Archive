@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TheGame509{% endblock %}
+
+{% block body %}
+     <div class="container">
+            <img src="{{ asset ('asset/image/gameReset.png') }}" alt="logo" class="logo">
+                <h2 id="mainTitle">🎮 {% trans %}The game of STUDIO509{% endtrans %} 🎲</h2> 
+                    <div class="form-control center">
+
+                        {% for flashError in app.flashes('reset_password_error') %}
+                            <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+                        {% endfor %}
+                            <h1>{% trans %}Reset your password{% endtrans %} <a href="{{ path('app_login') }}" class="buttonReturn">{% trans %}Return{% endtrans %}</a></h1>
+
+                            {{ form_start(requestForm) }}
+                                {{ form_row(requestForm.email, { attr:{placeholder:'Email'} }) }}
+                                <div>
+                                    <small>
+                                        {% trans %}Enter your email address and we will send you a link to reset your password{% endtrans %}.
+                                    </small>
+                                </div>
+
+                                <button class="btn btn-primary">{% trans %}Send password reset email{% endtrans %}</button>
+                            {{ form_end(requestForm) }}
+
+             </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,130 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TheGame509{% endblock %}
+
+{% block body %}
+
+    <!-- Sidebar -->
+      <div class="w3-sidebar w3-bar-block w3-card w3-border-right" style="display:none" id="mySidebar"> 
+        <button onclick="w3_close()" class="w3-bar-item w3-large">{% trans %}Close{% endtrans %} &times;</button>
+          {# {{ dump(app.user.role)}} #}
+          {% if app.user.role != "Super Administrator" %}         
+            <a style="display:none"  onclick="openUser() " class="w3-bar-item w3-button">{{ "User"| trans}}</a>
+          {% else %}  
+            <a   onclick="openUser()" class="w3-bar-item w3-button">{{ "User"| trans}}</a>
+          {% endif %}
+        <a onclick="openApplication()" class="w3-bar-item w3-button">Application</a>
+        <a onclick="openPlateau()" class="w3-bar-item w3-button">{% trans %}Board Game{% endtrans %}</a>
+        <a href="{{ path('logout') }}" class="w3-bar-item w3-button">{% trans %}Logout{% endtrans %}</a>
+      </div>
+
+    <!-- Page Content -->
+    <div id="main">
+      <div  class="content">
+        <button  class="w3-button w3-xlarge content" onclick="w3_open()">☰</button>
+      </div>
+    </div>
+
+    <div class="container ">
+        <img src="asset/image/logoAccueil.png" alt="logo" class="logo"/>
+          <h2 id="mainTitle">🎮 {% trans %}The game of STUDIO509{% endtrans %} 🎲</h2>
+                <!--Table de la gestion des administrateur client-->
+                  <div id="tableUser" style="display:none">
+                    <h1>{% trans %}List of Users{% endtrans %}<button onclick="closeUser()" class="buttonUser">{% trans %}Return{% endtrans %}</button>
+                    <button id="btn_add_form_user"  class="buttonUser">{% trans %}Add{% endtrans %}</button></h1>
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Email</th>
+                            <th scope="col">Roles</th>
+                            <th colspan="2">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody id="datas_users">
+                         {# liaison ajax avec users #}
+                        </tbody>
+                        <tfoot>
+                          <tr>
+                            <th scope="col">Email</th>
+                            <th scope="col">Roles</th>
+                            <th colspan="2">Action</th>
+                          </tr>
+                        </tfoot>
+                      </table>
+                  </div>
+             
+        <!--Table de la gestion de l'application -->
+        <div id="tableApplication" style="display:none">
+              <h1>{% trans %}List of default values{% endtrans %}<button onclick="closeApplication()" class="buttonUser">{% trans %}Return{% endtrans %}</button>
+              <button  class="buttonUser" id="btn_add_form_setting">{% trans %}Add{% endtrans %}</button></h1>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">{% trans %}Name of the action{% endtrans %}</th>
+                      <th scope="col">{% trans %}Default value{% endtrans %}</th>
+                      <th colspan="2">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="datas_setting">
+                  {# liaison ajax palteau  #}
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <th scope="col">{% trans %}Name of the action{% endtrans %}</th>
+                      <th scope="col">{% trans %}Default value{% endtrans %}</th>
+                      <th colspan="2">Action</th>
+                    </tr>
+                  </tfoot>
+                </table>
+          </div>
+    
+
+        {# table de gestion du plateau #}
+          <div id="tablePlateau" style="display:none">
+                <h1>{% trans %}Game board management{% endtrans %}<button onclick="closePlateau()" class="buttonUser">{% trans %}Return{% endtrans %}</button><button id="btn_add_form" class="buttonUser" >{% trans %}Add{% endtrans %}</button></h1>
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">{% trans %}Order{% endtrans %}</th>
+                        <th scope="col">{% trans %}Name{% endtrans %}</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Description</th>
+                        <th colspan="2">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody id="datas">
+                    {# liaison ajax case  #}
+                    </tbody>
+                    <tfoot>
+                      <tr>
+                        <th scope="col">{% trans %}Order{% endtrans %}</th>
+                        <th scope="col">{% trans %}Name{% endtrans %}</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Description</th>
+                        <th colspan="2">Action</th>
+                      </tr>
+                    </tfoot>
+                  </table>
+            </div>
+
+          {# modal de gestion des form #}
+          <div class="modal" id="exampleModal2" tabindex="-1">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModal2Title"></h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="exampleModal2Content">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{'Close'| trans}}</button>
+                </div>
+              </div>
+            </div>
+         
+  
+    </div>
+{% endblock %}
+
+       

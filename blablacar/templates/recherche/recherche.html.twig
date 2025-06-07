@@ -1,0 +1,267 @@
+{% extends 'base.html.twig' %}
+  
+{% block title %}Recherche{% endblock %}
+
+{% block body %}
+
+    
+
+    <div class="form card " style="width: 800px;">
+    <section class="col-12 m-auto mt-5 padd" id="section-trajet">
+            <div>
+                {% if app.user.getProfileImage() %}
+                    <h1 class="center title font pad1">Bienvenue {{app.user.username}} <img  src="{{asset('uploads/avatars/' ~ app.user.profileImage())}}" alt="" width="100" height="100" class="avatar" /></h1>
+                {% else %}
+                    <h1 class="center title font pad1">Bienvenue {{app.user.username}} <img src="{{ asset('asset/Images/profile.png')}}"   width="100" height="100" class="avatar" /></h1>
+                {% endif %}
+            </div>
+
+                 <div class="m-auto center"><h1>Où voulez-vous aller?</h1></div>
+
+                    <div class="input-group  mb-3">
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Depart" id="trajet_idVilleDepart" value="">
+                    </div>
+
+                    <div class="input-group input-group-xl mb-3">
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Arriver" id="trajet_idVilleRetour" value="">
+                    </div>
+
+           <div class="center"> <input type="datetime-local" id="birthdaytime" name="birthdaytime" class="pad1 pad">
+                <button id="send" onclick="test()" class="btn btn-secondary">Chercher</button>
+                <a href="{{ path('update_user', { 'id' : app.user.idUtilisateur}) }}"><i class="fas fa-user-cog fa-2x pad2" data-bs-toggle="tooltip" data-bs-html="bottom" title="Profile"></i></a>
+                <a href="{{ path('add_trajet') }}"><i class="fas fa-road fa-2x pad2" data-bs-toggle="tooltip" data-bs-html="bottom" title="Créer un trajet"></i></a>
+                <a href="{{ path('logout') }}"><i class="fas fa-power-off fa-2x pad2" data-bs-toggle="tooltip" data-bs-html="bottom" title="Déconnexion"></i></a></div>
+
+    </section>
+                <input type="text" id="depart_recherche" hidden >
+                <input type="text" id="arriver_recherche" hidden >
+                <input type="text" id="distance" hidden >
+                <input type="text" id="duration" hidden >
+        <section class="padd">
+			<div id="card-trajet" class="center row row-cols-1 row-cols-md-2 g-3">
+			
+			</div>
+        </section>  
+
+       
+	       
+    
+<div id="carte_recherche"  class="pad" > </div>
+
+<img src="{{ asset('asset/Images/london.png')}}" >
+
+</div>
+    <script>
+        var timeout;
+        var value;
+        var tab_depart = new Array();
+        var tab_arrivee = new Array();
+        var table = new Array();
+        var table1 = new Array();
+        var test99 = 0;
+         var id = 0;
+            function test(){
+                var villeDepart = document.getElementById("trajet_idVilleDepart").value = "";
+                var villeDestination = document.getElementById("trajet_idVilleRetour").value = "";
+            $.ajax({ 
+                type: "GET",
+                dataType: "json",
+                url: "{{ path('get_trajets') }}"
+            })        
+            .done(function( json ){     
+            var depart = document.getElementById("depart_recherche").value;
+            var arriver = document.getElementById("arriver_recherche").value;
+            document.getElementById("depart_recherche").value = "";
+            document.getElementById("arriver_recherche").value = "";
+            document.getElementById("card-trajet").innerHTML = "";
+            tab_depart = [];
+            tab_arrivee = [];
+            var arriverLL = arriver.split(",");
+            var departLL = depart.split(",");
+                $.each(json, function (index,elt){      
+                    var lat = elt.lat;
+                    var long = elt.long;
+                    var idTrajet = elt.id_trajet;
+                     var EtapeTime  = elt.etape_time;
+                
+                                function distance(lat1, lon1, lat2, lon2, unit) {
+                                    if ((lat1 == lat2) && (lon1 == lon2)) {
+                                        return 0;
+                                    }
+                                    else {
+                                        var radlat1 = Math.PI * lat1/180;
+                                        var radlat2 = Math.PI * lat2/180;
+                                        var theta = lon1-lon2;
+                                        var radtheta = Math.PI * theta/180;
+                                        var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+                                        if (dist > 1) {
+                                            dist = 1;
+                                        }
+                                        dist = Math.acos(dist);
+                                        dist = dist * 180/Math.PI;
+                                        dist = dist * 60 * 1.1515;
+                                        if (unit=="K") { dist = dist * 1.609344 }
+                                        if (unit=="N") { dist = dist * 0.8684 }
+                                        return dist;
+                                    }
+                                }
+                        var depart_count = distance(lat, long, departLL[0], departLL[1], 'K');
+                        var arrivee_count = distance(lat, long, arriverLL[0], arriverLL[1], 'K');
+
+                if(depart_count <= 50){
+                    if(tab_depart.includes(idTrajet)){
+                     //rien
+                    }else{
+                        tab_depart.push(idTrajet);
+                        table1.push(idTrajet,depart_count.toFixed(1),EtapeTime);
+                        tab_depart.push(table1); 
+                        table1 = [];         
+                    }    
+                }
+                if(tab_depart.includes(idTrajet)){
+                    if(arrivee_count <= 50){    
+                        if(tab_arrivee.includes(idTrajet)){
+                            //rien
+                                  for(var x = 0 ;x<=tab_arrivee.length;x++){
+                                if(tab_arrivee[x] == idTrajet){                    
+                                        tab_arrivee[x+1][0]=idTrajet;
+                                        tab_arrivee[x+1][1]=arrivee_count.toFixed(1);
+                                        tab_arrivee[x+1][2]=EtapeTime;
+                                            }       
+                            }
+                            }else{
+                                 if(test99 == 0){
+                                    
+                                    test99 = arrivee_count;
+                                }
+                                if(test99>arrivee_count){
+                                    tab_arrivee.push(idTrajet);
+                                    table = [idTrajet,arrivee_count.toFixed(1),EtapeTime];
+                                    tab_arrivee.push(table); 
+                                    table = [];  
+                                }
+       
+                            }         
+                        
+                    }
+                     }else{
+                    //rien
+                }
+  
+                });
+                if(tab_depart.length == 0 || tab_arrivee.length == 0){
+                    alert('aucun trajet');
+                }else{
+                    
+                    for(var x=0;x<=tab_depart.length;x++){
+                        for(var y=0;y<=tab_arrivee.length;y++){
+                            if(tab_arrivee[y] != null){
+                                if(tab_depart[x] == tab_arrivee[y]){
+                                     test2(tab_depart[x],tab_depart[x+1][1],tab_arrivee[y+1][1],tab_depart[x+1][2],tab_arrivee[y+1][2]);       
+                                }
+                            }
+                        }
+                    }  
+                console.log(tab_arrivee);
+                console.log(tab_depart);
+                 console.log(tab_arrivee);
+                }
+
+            });
+        }
+        function test2(id,depart,arrivee,depart_temps,arrivee_temps){
+            $.ajax({ 
+                type: "GET",
+                dataType: "json",
+                url: "{{ path('get_trajet_loading') }}"+id,
+            })        
+
+        .done(function( json ){     
+            var distance = document.getElementById("distance").value;
+            var duration = document.getElementById("duration").value;
+            console.log(duration);
+            $.each(json, function (index,elt){ 
+                var ville_depart = elt.villeDepart;
+                var ville_destination = elt.villeArrivee;
+                var idTraje_db = elt.idTrajet_db;
+                var idCreateur = elt.idCreateur;
+                var conducteur = elt.conducteur;
+                var dateDepart = elt.heureDepart;
+                var places = elt.places;
+                var prixTrajet = elt.prixTrajet;
+                var distanceTrajet = elt.distanceTrajet;
+                var utilisateur = elt.utilisateur;
+
+                var departC1 = 'gray';
+                var departC2 = 'gray';
+                var departC3 = 'gray';
+                var arriveeC1 = 'gray';
+                var arriveeC2 = 'gray';
+                var arriveeC3 = 'gray';
+                if(depart<5){departC1='#00FF00';}
+                if(depart<=15 && depart>5){departC2='orange';}
+                if(depart>15){departC3='red';}
+                if(arrivee<5){arriveeC1='#00FF00';}
+                if(arrivee<=15 && arrivee>5){arriveeC2='orange';}
+                if(arrivee>15){arriveeC3='red';}
+                var conducteurSplit = conducteur.split(",");
+                   var prixTrajetCount = prixTrajet/distanceTrajet;
+               // var prixTrajetCount = prixTrajetCount.toFixed(0);
+                var prixTrajetSum = prixTrajetCount * (distance/1000);
+                prixTrajetSum = prixTrajetSum.toFixed(0);
+
+                time_depart_trajet = new Date('2014-01-01 '+dateDepart+'');
+                time_depart_trajet.setSeconds(time_depart_trajet.getSeconds() + depart_temps);
+                var timeDepart = time_depart_trajet.toLocaleTimeString();
+
+                time_arrivee_trajet = new Date('2014-01-01 '+timeDepart+'');
+                time_arrivee_trajet.setSeconds(time_arrivee_trajet.getSeconds() + parseInt(duration));
+                var timeArrivee = time_arrivee_trajet.toLocaleTimeString();
+                    timeDepart = timeDepart.split(":");
+                    timeDepart = timeDepart[0]+':'+timeDepart[1];
+                    timeArrivee = timeArrivee.split(":");
+                    timeArrivee = timeArrivee[0]+':'+timeArrivee[1];
+                    console.log(time_depart_trajet);
+                    console.log(time_arrivee_trajet);
+                    console.log(dateDepart);
+                    console.log(depart_temps);
+                    console.log(timeDepart);
+                    console.log(timeArrivee);
+
+
+                    if(places>0){
+                    if(utilisateur!=idCreateur){
+                        $( "#card-trajet" ).append('<div class="col"><div class="card border-dark"><div class="card-body"><h5 class="card-title text-center">'+ville_depart.toUpperCase()+'&nbsp&nbsp<i class="fas fa-car-side"></i>&nbsp&nbsp'+ville_destination.toUpperCase()+'</h5><div class="col-12 d-flex"><div class="col-3 d-flex flex-column"><img src="uploads/avatars/'+conducteurSplit[1]+'"><p class="text-center">'+conducteurSplit[0].toUpperCase()+'</p></div><div class="col-10"><p>'+timeDepart+'-'+timeArrivee+'</p><p class="text-center"><i class="fas fa-walking" style="color: '+departC1+'"></i>&nbsp<i class="fas fa-walking" style="color: '+departC2+'"></i>&nbsp<i class="fas fa-walking" style="color: '+departC3+'"></i><br><i class="fas fa-walking" style="color: '+arriveeC1+'"></i>&nbsp<i class="fas fa-walking" style="color: '+arriveeC2+'"></i>&nbsp<i class="fas fa-walking" style="color: '+arriveeC3+'"></i></p><p class="text-center"></p>'+prixTrajetSum+' €</div></div></div>'+places+' place(s) disponible(s)<a href="{{ path('recherche_url') }}/'+idTraje_db+'" class="btn btn-secondary">Réserver</a></div></div></div>');     
+                       }
+                    }
+                    if(places==0){
+                    if(utilisateur!=idCreateur){
+                   $( "#card-trajet" ).append('<div class="col"><div class="card border-dark"><div class="card-body"><h5 class="card-title text-center">'+ville_depart.toUpperCase()+'&nbsp&nbsp<i class="fas fa-car-side"></i>&nbsp&nbsp'+ville_destination.toUpperCase()+'</h5><div class="col-12 d-flex"><div class="col-3 d-flex flex-column"><img src="uploads/avatars/'+conducteurSplit[1]+'"><p class="text-center">'+conducteurSplit[0].toUpperCase()+'</p></div><div class="col-10"><p class="text-center"><i class="fas fa-walking" style="color: '+departC1+'"></i>&nbsp<i class="fas fa-walking" style="color: '+departC2+'"></i>&nbsp<i class="fas fa-walking" style="color: '+departC3+'"></i><br><i class="fas fa-walking" style="color: '+arriveeC1+'"></i>&nbsp<i class="fas fa-walking" style="color: '+arriveeC2+'"></i>&nbsp<i class="fas fa-walking" style="color: '+arriveeC3+'"></i></p><p class="text-center"></p></div></div></div>'+places+' place(s) disponible(s)<button disabled class="btn btn-light">Complet</button></div></div></div>');                           }
+                    }
+            });
+        });
+        }        
+
+
+          // var a= setTimeout(showAlert, 2000);
+
+    </script>
+
+    <!--<div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">An item</li>
+                <li class="list-group-item">A second item</li>
+            </ul>
+        <div class="card-body">
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>
+    </div>
+    </div>-->
+     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdcKah4k65g7cQ18H-xXMqz72AoMowDY8&v=weekly&libraries=places&callback=initMap" async></script>   
+     <script type="text/javascript" src="{{ asset ('asset/Js/script_recherche.js') }}"></script>
+ {% endblock %}

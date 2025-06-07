@@ -1,0 +1,23 @@
+
+    <table class="table modalStyleScore">
+      <thead>
+        <tr>
+          <th class="modalTextScoreColor">🎮</th>
+          <th class="modalTextScoreColor">{{"Name" | trans }}</th>
+          <th class="modalTextScoreColor">Position</th>
+          <th class="modalTextScoreColor">Score</th>
+          <th class="modalTextScoreColor">{{"Turn" | trans}}</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for user in score %}
+            <tr>
+                <th class="center">{{ loop.index }}</th>
+                <td class="center">{{ user.name }}</td>
+                <td class="center">{{ user.pos }}</td>
+                <td class="center">{{ user.score }}</td>
+                <td class="center">{{ user.turn }}</td>
+            </tr>
+        {% endfor %} 
+      </tbody>
+    </table>

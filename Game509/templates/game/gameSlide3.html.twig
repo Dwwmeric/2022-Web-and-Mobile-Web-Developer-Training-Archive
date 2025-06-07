@@ -1,0 +1,55 @@
+{# html slide3 #}
+
+<div class="container">
+
+        <button  class="buttonScore score1Modal">Score</button> <h2 class="textPlayer">{{ player.name}}</h2>
+        <h2 class="textTurn">{{"Turn" | trans}}: {{ player.turn}}</h2>
+
+
+    <section class="dice-container">
+        <div class="dice-scene">
+            <section class="dice">
+                <section class="dice__face front">
+                <div class="dot dot-1"></div>
+                </section>
+                <section class="dice__face back">
+                <div class="dot dot-2"></div>
+                <div class="dot dot-2"></div>
+                </section>
+                <section class="dice__face left">
+                <div class="dot dot-3"></div>
+                <div class="dot dot-3"></div>
+                <div class="dot dot-3"></div>
+                </section>
+                <section class="dice__face right">
+                <div class="dot dot-4"></div>
+                <div class="dot dot-4"></div>
+                <div class="dot dot-4"></div>
+                <div class="dot dot-4"></div>
+                </section>
+                <section class="dice__face top">
+                <div class="dot dot-5-t1"></div>
+                <div class="dot dot-5-t2"></div>
+                <div class="dot dot-5-m"></div>
+                <div class="dot dot-5-b1"></div>
+                <div class="dot dot-5-b2"></div>
+                </section>
+                <section class="dice__face bottom">
+                <div class="dot dot-6"></div>
+                <div class="dot dot-6"></div>
+                <div class="dot dot-6"></div>
+                <div class="dot dot-6"></div>
+                <div class="dot dot-6"></div>
+                <div class="dot dot-6"></div>
+                </section>
+            </section>
+        </div>
+    </section>
+
+    <section class="button">
+        <button id="roll" >{{"Let's Roll!"| trans}}</button> 
+            <div id="timer" style="display: none;"><h2 class="timer">{{"Result in"| trans}}: <span id="timerScore">5</span></h2></div>
+        <h2 class="point">{{ player.score }} PC</h2>
+    </section>
+    
+</div>
