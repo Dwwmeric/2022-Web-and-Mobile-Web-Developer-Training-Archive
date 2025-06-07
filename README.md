@@ -14,6 +14,7 @@ Project carried out during training, on stage or independently
 
 - -developer-portfolio: Complete at the end of the training.
 - blablacar: Reproduction of the blablacar site in a group for 2 weeks with presentation.
+- Game509: Board game animation project for businesses.
 - generator-citation: Random generator.
 - Lead-Space-Code: Blog project to work on native PHP.
 - minilink: URL Link Shortening Project.
